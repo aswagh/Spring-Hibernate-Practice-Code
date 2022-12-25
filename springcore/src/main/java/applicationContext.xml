@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="address" class="com.example.springcore.Address" >
+	<constructor-arg value="Mumbai" type="String" index="1"></constructor-arg>
+	<constructor-arg value="Maharashtra" type="String" index="0"></constructor-arg>
+</bean>
+
+<bean name="student" class="com.example.springcore.Student">
+	<property name="id" value="101"></property>
+	<property name="name" value="Atul Wagh"></property>
+	<property name="subjects">
+		<list>
+			<value>Math</value>
+			<value>Eng</value>
+			<value>Sci</value>
+		</list>
+	</property>
+	<property name="score">
+		<map>
+		<entry key="Math" value="80"/>
+		<entry key="Eng" value="55"/>
+		<entry key="Sci" value="78"/>
+		</map>
+	</property>
+	<property name="props">
+		<props>
+			<prop key="Grade">A</prop>
+			<prop key="Remark">Very Good</prop>
+		</props>
+	</property>
+	<constructor-arg ref="address"></constructor-arg>
+</bean>
+
+</beans>
